@@ -20,7 +20,7 @@ def hash_numerica(value):
 for legion in legiones:
     tabla_legiones[legion] = []
 
-for i in range(0,10):
+for i in range(0,1000):
     trooper = f"{choice(legiones)}-{randint(1000, 9999)}"
     clave = hash_numerica(trooper)
     
@@ -31,12 +31,14 @@ for i in range(0,10):
     tabla_legiones[hash_legion(trooper)].append(trooper)       
 
 #! FN-2187 es traidor
-lista_187 = tabla_numerica.get("187", [])
-if "FN-2187" in lista_187:
-    print(f"esta en la posicion {pos_fn_2187}")
-    print(lista_187)
+list_187 = tabla_numerica.get('187', [])
+if 'FN-2187' in list_187:
+    pos_fn_2187 = list_187.index('FN-2187')
+    if pos_fn_2187 > -1:
+        print(f'esta en la posicion {pos_fn_2187}')
 else:
-    print("no esta el trooper")
+    print('no esta')
+print(len(list_187))
 print()
 
 #! mision de asalto y exploracion
@@ -59,4 +61,8 @@ for index, trooper in enumerate(mission_hoth):
     print(f"{index}-{trooper}")
 print()
 
-
+mission_endor = tabla_legiones.get('TF', [])
+print('Stromtroopers para mision a hoth')
+for index, trooper in enumerate(mission_endor):
+     print(f'{index} - {trooper}')
+print()
