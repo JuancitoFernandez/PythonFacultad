@@ -25,6 +25,20 @@ class BinaryTree:
 
         self.root = __insert(self.root, value, other_value)
 
+    def height(self, node):
+        if node is None:
+            return 0
+        else:
+            left_height = self.height(node.left)
+            right_height = self.height(node.right)
+            return max(left_height, right_height) + 1
+
+    def left_height(self):
+        return self.height(self.root.left) if self.root else 0
+
+    def right_height(self):
+        return self.height(self.root.right) if self.root else 0
+
     def search(self, key):
         def __search(root, key):
             if root is not None:
