@@ -172,15 +172,19 @@ class BinaryTree:
             __inorden_superheros_start_with(self.root, start)
 
     def proximity_search(self, search_value):
+        resultados = []
+
         def __proximity_search(root, search_value):
             if root is not None:
                 __proximity_search(root.left, search_value)
                 if root.value.startswith(search_value):
-                    print(root.value)
+                    resultados.append(root.other_value)  # Añadir el Pokémon completo
                 __proximity_search(root.right, search_value)
 
         if self.root is not None:
             __proximity_search(self.root, search_value)
+        
+        return resultados
 
     def by_level(self):
         pendientes = Queue()
