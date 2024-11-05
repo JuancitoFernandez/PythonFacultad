@@ -3,10 +3,29 @@ from heap import HeapMin
 from pila import Stack
 
 class Graph:
-    def __init__(self, dirigido=True):
-        self.elements = []
-        self.dirigido = dirigido
 
+    def __init__(self, dirigido=False):
+        self.dirigido = dirigido
+        self.elements = []  
+        self.aristas = []  
+
+    def insert_vertice(self, value):
+        
+        if value not in [element['value'] for element in self.elements]:
+            self.elements.append({'value': value, 'aristas': []})
+
+    def insert_arista(self, origen, destino, peso):
+        self.aristas.append({'origen': origen, 'destino': destino, 'peso': peso})
+        
+        for nodo in self.elements:
+            if nodo['value'] == origen:
+                nodo['aristas'].append({'value': destino, 'peso': peso})
+                break
+        if not self.dirigido:
+            for nodo in self.elements:
+                if nodo['value'] == destino:
+                    nodo['aristas'].append({'value': origen, 'peso': peso})
+    
     def show_graph(self):
         print()
         print("nodos")
@@ -194,3 +213,14 @@ class Graph:
                     else:
                         bosque.append(vertice_ori+';'+vertice_des+';'+f'{arista[1][0]}-{arista[1][1]}-{arista[0]}')
         return bosque
+
+    
+    def max_episodios_compartidos(self):
+            max_peso = 0
+            personajes = ("", "")
+            for nodo in self.elements:
+                for arista in nodo['aristas']:
+                    if arista['peso'] > max_peso:
+                        max_peso = arista['peso']
+                        personajes = (nodo['value'], arista['value'])
+            return max_peso, personajes
