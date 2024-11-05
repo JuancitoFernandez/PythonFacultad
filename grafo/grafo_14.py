@@ -54,19 +54,3 @@ print("Metros de cable necesarios para conectar todos los ambientes:", total_met
 # Ejecutar Dijkstra desde "habitación 1"
 camino_minimo = grafo_casa.dijkstra("habitación 1")
 
-# Encontrar la distancia a la "sala de estar" y el camino específico
-distancia_sala_estar = 0
-ruta = []
-while not camino_minimo.is_empty():  # Comprobamos si la pila está vacía
-    nodo = camino_minimo.pop()
-    if nodo[1][0] == "sala de estar":
-        distancia_sala_estar = nodo[0]
-        # Reconstruir la ruta desde "habitación 1" a "sala de estar"
-        while nodo:
-            ruta.insert(0, nodo[1][0])
-            nodo = next((n for n in camino_minimo.get_elements() if n[1][0] == nodo[1][2]), None)
-        break
-
-
-print("Ruta más corta desde 'habitación 1' a 'sala de estar':", " -> ".join(ruta))
-print("Metros de cable de red necesarios:", distancia_sala_estar)
