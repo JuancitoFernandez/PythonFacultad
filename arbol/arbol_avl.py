@@ -13,7 +13,55 @@ class BinaryTree:
 
     def __init__(self):
         self.root = None
+ 
+    def inorden_villanos_alfabetico(self):
+        villanos = []
+        self._inorden_villanos_recursivo(self.root, villanos)
+        return villanos
 
+    def _inorden_villanos_recursivo(self, nodo, villanos):
+        if nodo is not None:
+            self._inorden_villanos_recursivo(nodo.left, villanos)
+            # Asume que el valor es un string si solo guarda el nombre
+            if isinstance(nodo.value, dict) and not nodo.value.get('is_hero', True):  
+                villanos.append(nodo.value['nombre'])
+            elif isinstance(nodo.value, str):
+                villanos.append(nodo.value)  # Guarda el nombre directamente si es string
+            self._inorden_villanos_recursivo(nodo.right, villanos)
+    # Método para contar nodos
+    def contar_nodos(self):
+        return self._contar_nodos_recursivo(self.root)
+
+    def _contar_nodos_recursivo(self, nodo):
+        if nodo is None:
+            return 0
+        return 1 + self._contar_nodos_recursivo(nodo.left) + self._contar_nodos_recursivo(nodo.right)
+
+    # Método para hacer un recorrido inorden de los héroes que comienzan con una letra específica
+    def inorden_superheros_start_with(self, letra):
+        resultados = []
+        self._inorden_superheros_start_with_recursivo(self.root, letra, resultados)
+        print(resultados)
+
+    def _inorden_superheros_start_with_recursivo(self, nodo, letra, resultados):
+        if nodo is not None:
+            self._inorden_superheros_start_with_recursivo(nodo.left, letra, resultados)
+            if nodo.value['nombre'].startswith(letra):
+                resultados.append(nodo.value['nombre'])
+            self._inorden_superheros_start_with_recursivo(nodo.right, letra, resultados)
+
+    # Método para obtener los nombres en orden alfabético
+    def inorden_alfabetico(self):
+        resultados = []
+        self._inorden_alfabetico_recursivo(self.root, resultados)
+        return resultados
+
+    def _inorden_alfabetico_recursivo(self, nodo, resultados):
+        if nodo is not None:
+            self._inorden_alfabetico_recursivo(nodo.left, resultados)
+            resultados.append(nodo.value['nombre'])
+            self._inorden_alfabetico_recursivo(nodo.right, resultados)
+            
     def height(self, root):
         if root is None:
             return -1
