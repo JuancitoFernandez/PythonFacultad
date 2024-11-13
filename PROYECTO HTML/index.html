@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Castillo Ambulante - Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Merriweather:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome -->
+</head>
+
+<body>
+    <header>
+        <h1>El Castillo Ambulante (Howl's Moving Castle)</h1>
+        <p>Un blog dedicado a la mágica película del Studio Ghibli dirigida por Hayao Miyazaki.</p>
+    </header>
+
+    <main>
+        <section class="banner">
+            <img src="movingcastle.png" alt="Banner de El Castillo Ambulante">
+        </section>
+
+        <!-- Sinopsis de la película -->
+        <section class="sinopsis">
+            <h2>Sinopsis</h2>
+            <p><strong>El Castillo Ambulante</strong> es una película de animación japonesa dirigida por <em>Hayao
+                    Miyazaki</em> y producida por <em>Studio Ghibli</em>. La historia sigue a <strong>Sophie</strong>,
+                una joven que es maldecida y transformada en una anciana por una bruja. Sophie busca refugio en el
+                extraño y mágico castillo ambulante de <strong>Howl</strong>, un misterioso y poderoso mago. Juntos
+                emprenden una aventura para romper la maldición y proteger el castillo de una inminente guerra.</p>
+        </section>
+
+        <!-- Análisis de personajes con imágenes -->
+        <section class="personajes">
+            <h2>Personajes Principales</h2>
+            <div class="galeria">
+                <div class="personaje">
+                    <img src="sophie.jpg" alt="Sophie">
+                    <h3>Sophie Hatter</h3>
+                    <p>Sophie es una joven tímida y trabajadora que se dedica a la sombrerería de su familia. A lo largo
+                        de la historia, demuestra una gran valentía y amor hacia los demás, especialmente hacia Howl. Su
+                        transformación en anciana le permite descubrir su verdadero valor y potencial.</p>
+                </div>
+                <div class="personaje">
+                    <img src="howl.jpg" alt="Howl">
+                    <h3>Howl Jenkins Pendragon</h3>
+                    <p>Howl es un mago enigmático y poderoso que vive en un castillo ambulante. Aunque al principio
+                        parece superficial y egoísta, Howl en realidad es compasivo y lucha por proteger a quienes ama,
+                        a pesar de sus miedos y conflictos internos.</p>
+                </div>
+                <div class="personaje">
+                    <img src="calcifer.jpg" alt="Calcifer">
+                    <h3>Calcifer</h3>
+                    <p>Calcifer es un demonio de fuego que alimenta y mueve el castillo de Howl. Aunque es sarcástico y
+                        travieso, desarrolla un vínculo con Sophie y desempeña un papel crucial en la resolución de la
+                        historia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrusel de películas de Studio Ghibli -->
+        <section class="carrusel">
+            <h2>Más Películas de Studio Ghibli</h2>
+            <div class="carrusel-container">
+                <div class="slide">
+                    <img src="spirited_away.jpg" alt="Spirited Away">
+                    <p>Spirited Away</p>
+                </div>
+                <div class="slide">
+                    <img src="princess_mononoke.jpg" alt="Princess Mononoke">
+                    <p>Princess Mononoke</p>
+                </div>
+                <div class="slide">
+                    <img src="my_neighbor_totoro.jpg" alt="My Neighbor Totoro">
+                    <p>My Neighbor Totoro</p>
+                </div>
+                <div class="slide">
+                    <img src="nausicaa.jpg" alt="Nausicaä of the Valley of the Wind">
+                    <p>Nausicaä of the Valley of the Wind</p>
+                </div>
+                <div class="slide">
+                    <img src="ponyo.jpg" alt="Ponyo">
+                    <p>Ponyo</p>
+                </div>
+                <div class="slide">
+                    <img src="the_wind_rises.jpg" alt="The Wind Rises">
+                    <p>The Wind Rises</p>
+                </div>
+                <div class="slide">
+                    <img src="kiki_delivery_service.jpg" alt="Kiki's Delivery Service">
+                    <p>Kiki's Delivery Service</p>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">❮</button>
+            <button class="next" onclick="moveSlide(1)">❯</button>
+        </section>
+
+        <!-- Redes sociales debajo del carrusel -->
+        <section class="social-media">
+            <h2>Conéctate conmigo</h2>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/4juanbonin" target="_blank" title="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="mailto:juanmanuelbonin@gmail.com" title="Correo Electrónico"><i
+                        class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Blog de El Castillo Ambulante. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="carrusel.js"></script>
+</body>
+
+</html>

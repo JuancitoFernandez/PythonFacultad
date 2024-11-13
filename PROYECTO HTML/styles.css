@@ -1,0 +1,230 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f7f2e7;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #8b7164;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Banner */
+.banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Sección de sinopsis */
+.sinopsis h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8em;
+    color: #8b7164;
+    margin-bottom: 10px;
+}
+
+.sinopsis p {
+    font-size: 1.05em;
+    color: #444;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Galería de personajes */
+.personajes h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8em;
+    color: #8b7164;
+    margin-bottom: 15px;
+}
+
+.galeria {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.personaje {
+    flex: 1 1 30%;
+    text-align: center;
+}
+
+.personaje img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.personaje h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.3em;
+    color: #6e4a3c;
+    margin-bottom: 5px;
+}
+
+.personaje p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95em;
+    color: #555;
+    text-align: justify;
+}
+
+/* Footer */
+footer {
+    background-color: #8b7164;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+.social-media {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.social-media h2 {
+    font-size: 24px;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    font-size: 36px;
+    margin: 0 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #ff6347;
+    /* Color cuando se pasa el mouse por encima */
+}
+
+
+/* Carrusel */
+.carrusel {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.carrusel h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8em;
+    color: #8b7164;
+    margin-bottom: 15px;
+}
+
+.carrusel-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    text-align: center;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.slide p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    color: #555;
+    margin-top: 8px;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    font-size: 2em;
+    color: #8b7164;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transform: translateY(-50%);
+    padding: 0 15px;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover,
+.next:hover {
+    color: #6e4a3c;
+}
+
+/* Ajuste del tamaño de las imágenes del carrusel */
+.carrusel-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+}
+
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    text-align: center;
+}
+
+.slide img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+.slide p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    color: #555;
+    margin-top: 8px;
+}

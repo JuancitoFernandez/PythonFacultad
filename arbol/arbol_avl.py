@@ -29,6 +29,7 @@ class BinaryTree:
                 villanos.append(nodo.value)  # Guarda el nombre directamente si es string
             self._inorden_villanos_recursivo(nodo.right, villanos)
     # Método para contar nodos
+    
     def contar_nodos(self):
         return self._contar_nodos_recursivo(self.root)
 
